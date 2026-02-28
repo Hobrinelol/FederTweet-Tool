@@ -5,7 +5,7 @@
 # AUTO-UPDATE SECTION
 # ============================================================================
 
-$ScriptVersion = "2.1.0"
+$ScriptVersion = "2.2"
 $ScriptPath = $MyInvocation.MyCommand.Path
 $GitHubUser = "Hobrinelol"
 $GitHubRepo = "FederTweet-Tool"
