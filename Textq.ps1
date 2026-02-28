@@ -7,7 +7,7 @@
 
 $ScriptVersion = "2.1.0"
 $ScriptPath = $MyInvocation.MyCommand.Path
-$GitHubUser = "YourUsername"
+$GitHubUser = "Hobrinelol"
 $GitHubRepo = "FederTweet-Tool"
 $UpdateURL = "https://api.github.com/repos/$GitHubUser/$GitHubRepo/releases/latest"
 
@@ -78,8 +78,8 @@ function Check-AndUpdate {
                 Write-Host ""
             }
             
-            Write-Host " Downloading update..." -ForegroundColor Cyan
-            Show-LoadingBar -Message " Downloading" -Duration 3000
+            Write-Host " Downloading update..." -ForegroundColorCyan
+            Show-LoadingBar -Message " Downloading" -Duration 4000000000
             
             # Neues Script herunterladen
             if ($response.assets.Count -gt 0) {
@@ -156,6 +156,8 @@ class FederTweetTool {
 
     # Service-Status prüfen
     [void] CheckServiceStatus() {
+        Clear-Host
+        $this.ShowBanner()
         Write-Host ""
         Write-Host ("=" * 60) -ForegroundColor DarkCyan
         Write-Host " CHECKING SERVICE STATUS" -ForegroundColor White
@@ -225,6 +227,24 @@ class FederTweetTool {
         Write-Host ("-" * 60) -ForegroundColor DarkGray
         Write-Host " API Documentation: $($this.ApiDocsURL)" -ForegroundColor Gray
         Write-Host ("=" * 60) -ForegroundColor DarkCyan
+    }
+
+    # Banner anzeigen
+    [void] ShowBanner() {
+        Write-Host ' $$$$$$$$\                    $$\      $$$$$$\  ' -ForegroundColor DarkCyan
+        Write-Host ' \__$$  __|                   $$ |    $$  __$$\ ' -ForegroundColor DarkCyan
+        Write-Host '   $$ | $$$$$$\  $$\   $$\ $$$$$$\   $$ /  $$ | ' -ForegroundColor DarkCyan
+        Write-Host '   $$ |$$  __$$\ \$$\ $$  |\_$$  _|  $$ |  $$ | ' -ForegroundColor DarkCyan
+        Write-Host '   $$ |$$$$$$$$ | \$$$$  /   $$ |    $$ |  $$ | ' -ForegroundColor DarkCyan
+        Write-Host '   $$ |$$   ____| $$  $$<    $$ |$$\ $$ $$\$$ | ' -ForegroundColor DarkCyan
+        Write-Host '   $$ |\$$$$$$$\ $$  /\$$\   \$$$$  |\$$$$$$ /  ' -ForegroundColor DarkCyan
+        Write-Host '   \__| \_______|\__/  \__|   \____/  \___$$$\  ' -ForegroundColor DarkCyan
+        Write-Host '                                          \___| ' -ForegroundColor DarkCyan
+        Write-Host ("=" * 70) -ForegroundColor DarkGray
+        Write-Host "                    F E D E R T W E E T   A P I" -ForegroundColor White
+        Write-Host "                    P O W E R S H E L L   T O O L" -ForegroundColor White
+        Write-Host "                          v2.1.0 - Enterprise" -ForegroundColor Gray
+        Write-Host ("=" * 70) -ForegroundColor DarkGray
     }
 
     # Lade-Animation
@@ -348,6 +368,8 @@ class FederTweetTool {
 
     # Tweets eines Users anzeigen
     [void] GetUserTweets([string]$Username) {
+        Clear-Host
+        $this.ShowBanner()
         Write-Host ""
         Write-Host ("=" * 60) -ForegroundColor DarkCyan
         Write-Host " FETCHING TWEETS FOR: @$Username" -ForegroundColor White
@@ -392,6 +414,8 @@ class FederTweetTool {
 
     # Global Feed anzeigen
     [void] GetGlobalFeed() {
+        Clear-Host
+        $this.ShowBanner()
         Write-Host ""
         Write-Host ("=" * 60) -ForegroundColor DarkCyan
         Write-Host " GLOBAL FEED" -ForegroundColor White
@@ -437,6 +461,8 @@ class FederTweetTool {
 
     # User-Profil anzeigen
     [void] GetUserProfile([string]$Username) {
+        Clear-Host
+        $this.ShowBanner()
         Write-Host ""
         Write-Host ("=" * 60) -ForegroundColor DarkCyan
         Write-Host " USER PROFILE: @$Username" -ForegroundColor White
@@ -618,6 +644,8 @@ class FederTweetTool {
 
     # Startmenü mit Service-Auswahl
     [void] ShowStartMenu() {
+        Clear-Host
+        $this.ShowBanner()
         Write-Host ""
         Write-Host ("=" * 60) -ForegroundColor DarkCyan
         Write-Host " SERVICE SELECTION" -ForegroundColor White
@@ -662,6 +690,8 @@ class FederTweetTool {
     [void] ShowMenu() {
         $choice = ""
         do {
+            Clear-Host
+            $this.ShowBanner()
             $this.ShowServiceStatus()
             Write-Host ""
             Write-Host ("+" + ("-" * 58) + "+") -ForegroundColor DarkCyan
